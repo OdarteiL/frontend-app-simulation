@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="crudApp">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/userController.js"></script>
+</head>
+<body ng-controller="UserController">
+  <h1>User Form</h1>
+  <form ng-submit="addUser()">
+    <input type="text" ng-model="user.name" placeholder="Name" required />
+    <input type="email" ng-model="user.email" placeholder="Email" required />
+    <button type="submit">Add User</button>
+  </form>
+  <ul>
+    <li ng-repeat="u in users">
+      {{ u.name }} - {{ u.email }}
+    </li>
+  </ul>
+</body>
+</html>

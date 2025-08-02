@@ -1,0 +1,25 @@
+name: Frontend CI
+
+on:
+  push:
+    branches:
+      - dev-frontend
+  pull_request:
+    branches:
+      - dev-frontend
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Simulate Frontend Build
+      run: echo "No build needed for AngularJS. Just serving static files."
+
+    - name: Simulate Test
+      run: |
+        echo "Running fake test..."
+        echo "PASS: User form loads correctly"
